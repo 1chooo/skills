@@ -1,9 +1,4 @@
----
-name: api-routes
-description: REST API route handler conventions for 1chooo.com — auth, Zod validation, Supabase, and response shapes
----
-
-# API Route Conventions
+# API route conventions
 
 All mutations go through Route Handlers — there are no Server Actions (`"use server"`).
 
@@ -115,7 +110,3 @@ app/api/
 ```
 
 Public token routes (`/api/split/[token]`, `/api/store/[token]`) do not use `requireUser()` — validate the token instead.
-
-## Install
-
-Copy this file to `.cursor/skills/api-routes/SKILL.md` in your project, or clone from [github.com/1chooo/skills](https://github.com/1chooo/skills).

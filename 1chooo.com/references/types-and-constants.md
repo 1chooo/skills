@@ -1,9 +1,4 @@
----
-name: types-and-constants
-description: TypeScript types in types/, domain constants in lib/ — never mix. Folder layout and import patterns for 1chooo.com.
----
-
-# Types and Constants
+# Types and constants
 
 Shared types belong in `types/`, not in `lib/`, API routes, or component files.
 Domain constants (labels, colors, option lists, enum arrays) belong in `lib/`, not in `types/`.
@@ -111,7 +106,3 @@ import type { AnalyticsResponse } from '@/types/services/jobs/analytics'
 - Add a new service folder under `types/services/` when types are shared across multiple files.
 - Add or extend a matching `lib/<service>.ts` for constants tied to those types.
 - Keep one-off props interfaces next to the component that uses them only.
-
-## Install
-
-Copy this file to `.cursor/skills/types-and-constants/SKILL.md` in your project, or clone from [github.com/1chooo/skills](https://github.com/1chooo/skills).

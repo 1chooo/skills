@@ -1,9 +1,4 @@
----
-name: 1chooo-project
-description: Foundation conventions for 1chooo.com — stack, route groups, where to put code, imports, and design system
----
-
-# 1chooo.com Project Foundation
+# Project foundation
 
 Personal site + authenticated mini-apps monolith on **Next.js 16 App Router**, **React 19**, **TypeScript**, **Tailwind CSS v4**, **MDX**, and **Supabase**.
 
@@ -86,7 +81,3 @@ Personal site + authenticated mini-apps monolith on **Next.js 16 App Router**, *
 | Workspace tabs | `types/services/workspace/shell.ts` | `{ id, label, icon }` | `ServiceWorkspaceShell` internal nav |
 
 Use `ServiceNavItem` alias from `types/services/nav.ts` in services code to avoid the collision.
-
-## Install
-
-Copy this file to `.cursor/skills/1chooo-project/SKILL.md` in your project, or clone from [github.com/1chooo/skills](https://github.com/1chooo/skills).

@@ -1,9 +1,4 @@
----
-name: services-confirm-toasts
-description: ConfirmDialog for destructive actions, Sonner toasts for create/delete feedback — never window.confirm() in services UI
----
-
-# Services Confirm Dialogs & Toasts
+# Services confirm dialogs & toasts
 
 Do not use `window.confirm()` or `alert()` in services UI. Use the shared `ConfirmDialog` and Sonner toasts so feedback matches the app design.
 
@@ -90,7 +85,3 @@ The name `stock` is special in the notes service. When a user creates a category
   <StockMentionsSection ... />
 )}
 ```
-
-## Install
-
-Copy this file to `.cursor/skills/services-confirm-toasts/SKILL.md` in your project, or clone from [github.com/1chooo/skills](https://github.com/1chooo/skills).

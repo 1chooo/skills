@@ -1,9 +1,4 @@
----
-name: components-ui
-description: Shared UI primitives in components/ui/ — Radix package, Dialog API, ConfirmDialog, Sonner placement, and Charts
----
-
-# Components UI Conventions
+# Components UI conventions
 
 Shared primitives in `components/ui/` — shadcn-style (CVA + Radix). Reference: `components/ui/button.tsx`, `components/ui/dialog.tsx`.
 
@@ -22,8 +17,8 @@ Not `@radix-ui/react-*`. Components use `data-slot="..."` attributes (shadcn v4 
 | Area | Pattern |
 |------|---------|
 | `components/ui/button.tsx` | shadcn CVA (`rounded-md`, `variant`/`size`) — used sparingly |
-| Services | Custom `font-mono text-xs rounded` buttons — see `services-ui` rule |
-| Admin | Square-cornered plain `<button>` — see `admin-ui` skill |
+| Services | Custom `font-mono text-xs rounded` buttons — see [services-ui.md](services-ui.md) |
+| Admin | Square-cornered plain `<button>` — see [admin-ui.md](admin-ui.md) |
 | `ConfirmDialog` | Plain `<button>`, not `Button` |
 
 ## Dialog API
@@ -51,7 +46,3 @@ Not `@radix-ui/react-*`. Components use `data-slot="..."` attributes (shadcn v4 
 
 - Requires `ChartConfig` from `types/ui/chart.ts`
 - `useChart()` throws if used outside `<ChartContainer />`
-
-## Install
-
-Copy this file to `.cursor/skills/components-ui/SKILL.md` in your project, or clone from [github.com/1chooo/skills](https://github.com/1chooo/skills).

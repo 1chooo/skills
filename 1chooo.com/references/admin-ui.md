@@ -1,9 +1,4 @@
----
-name: admin-ui
-description: Admin UI button and tab switcher conventions — plain buttons, square corners, no Radix Tabs, consistent active/inactive states
----
-
-# Admin Button & Tab Switcher Style
+# Admin button & tab switcher style
 
 All tab switchers, period selectors, and view toggles in `app/(admin)/` must use plain `<button>` elements — **never** Radix `TabsTrigger`/`TabsList`. Radix `TabsContent` with its base styles causes active-state overrides to fail silently.
 
@@ -47,7 +42,3 @@ All tab switchers, period selectors, and view toggles in `app/(admin)/` must use
 ## Reference
 
 Canonical reference: `app/(admin)/admin/_components/photos/photos-manager-tabs.tsx`
-
-## Install
-
-Copy this file to `.cursor/skills/admin-ui/SKILL.md` in your project, or clone from [github.com/1chooo/skills](https://github.com/1chooo/skills).

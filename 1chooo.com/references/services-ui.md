@@ -1,11 +1,6 @@
----
-name: services-ui
-description: Services UI conventions for 1chooo.com — lowercase copy, monospace buttons, forms, workspace shells, and client fetch patterns
----
+# Services UI conventions
 
-# Services UI Conventions
-
-Authenticated mini-apps under `app/(services)/services/`. Complements `services-confirm-toasts` skill (destructive actions + toasts).
+Authenticated mini-apps under `app/(services)/services/`. Complements [services-confirm-toasts.md](services-confirm-toasts.md) (destructive actions + toasts).
 
 ## Copy and typography
 
@@ -83,7 +78,3 @@ Sonner `<Toaster>` is in `app/(services)/layout.tsx` (`position="bottom-center"`
 ## Autosave
 
 Notes use autosave with inline status — do **not** toast on autosave. Toast only on explicit create/delete/rename actions.
-
-## Install
-
-Copy this file to `.cursor/skills/services-ui/SKILL.md` in your project, or clone from [github.com/1chooo/skills](https://github.com/1chooo/skills).

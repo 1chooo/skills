@@ -1,9 +1,4 @@
----
-name: utils-auth-supabase
-description: Server-only auth helpers, Supabase client matrix, CORS, and cookie options for 1chooo.com
----
-
-# Utils — Auth, Supabase, CORS
+# Utils — auth, Supabase, CORS
 
 `utils/` is server-only except `utils/supabase/client.ts`. **Never import `utils/auth.ts` in client components.**
 
@@ -61,7 +56,3 @@ Applied globally in `proxy.ts` for `/api/*`.
 ## DB schema
 
 Canonical schema + RLS: `supabase/schema.sql` — read relevant sections before adding tables or API routes.
-
-## Install
-
-Copy this file to `.cursor/skills/utils-auth-supabase/SKILL.md` in your project, or clone from [github.com/1chooo/skills](https://github.com/1chooo/skills).

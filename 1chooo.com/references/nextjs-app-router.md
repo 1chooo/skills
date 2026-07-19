@@ -1,9 +1,4 @@
----
-name: nextjs-app-router
-description: Next.js 16 App Router patterns — Server/Client boundaries, async params, layouts, auth guards, and proxy.ts
----
-
-# Next.js App Router Patterns
+# Next.js App Router patterns
 
 ## Server Components by default
 
@@ -109,7 +104,3 @@ Default services column is `max-w-5xl` centered. Pages that need full width opt 
 ## Missing resources
 
 Use `notFound()` from `next/navigation` — no dedicated `error.tsx` / `loading.tsx` files.
-
-## Install
-
-Copy this file to `.cursor/skills/nextjs-app-router/SKILL.md` in your project, or clone from [github.com/1chooo/skills](https://github.com/1chooo/skills).

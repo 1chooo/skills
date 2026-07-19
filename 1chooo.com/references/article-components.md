@@ -1,9 +1,4 @@
----
-name: article-components
-description: Layout and style conventions for interactive article demo components in components/articles/ — two-column shell, buttons, right-panel blocks, and file organization
----
-
-# Article Component Conventions
+# Article component conventions
 
 Reference implementations: `components/articles/css-layout/` (`DemoBoxModel`, `DemoFlexbox`, `DemoCSSGrid`, `DemoPosition`).
 
@@ -124,7 +119,3 @@ components/articles/
 - Use `cn()` from `@/lib/utils` for conditional classes.
 - Always use `@/` alias for imports — never relative `../` paths.
 - **Do NOT wrap two-column demos in `<BlockSideTitle>`.** It collapses the flex shell. Place demos bare in MDX.
-
-## Install
-
-Copy this file to `.cursor/skills/article-components/SKILL.md` in your project, or clone from [github.com/1chooo/skills](https://github.com/1chooo/skills).

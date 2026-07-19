@@ -1,9 +1,4 @@
----
-name: mdx-content
-description: MDX article conventions for 1chooo.com — frontmatter, sections, scaffolding, LLM routes, and demo registration
----
-
-# MDX Content Conventions
+# MDX content conventions
 
 ## Article sections
 
@@ -66,7 +61,7 @@ All custom components are registered in `mdx-components.tsx` at the **repo root*
 
 ## Adding a new interactive demo
 
-1. Create `components/articles/<topic>/demo-*.tsx` (see `article-components` rule)
+1. Create `components/articles/<topic>/demo-*.tsx` (see [article-components.md](article-components.md))
 2. Export from `components/articles/<topic>/index.ts`
 3. Re-export in `components/articles/index.ts`
 4. Add `dynamic()` import in `mdx-components.tsx`
@@ -89,7 +84,3 @@ Heavy demos must use `dynamic()` — do not import article components directly i
 - `app/(llms)/llm/[[...slug]]/route.ts` — per-page markdown
 
 Metadata is parsed via regex from MDX source (same pattern as article listings).
-
-## Install
-
-Copy this file to `.cursor/skills/mdx-content/SKILL.md` in your project, or clone from [github.com/1chooo/skills](https://github.com/1chooo/skills).
