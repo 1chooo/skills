@@ -3,6 +3,16 @@
   "notGrouped": "bottom",
   "groupings": [
     {
+      "title": "Shared",
+      "description": "Cross-project web-service conventions for 1chooo.com and JustHold — App Router, API routes, and Supabase clients.",
+      "skills": [
+        "web-service-stack",
+        "nextjs-rsc-patterns",
+        "api-supabase-routes",
+        "supabase-clients"
+      ]
+    },
+    {
       "title": "1chooo.com",
       "description": "Conventions for building 1chooo.com — App Router, API routes, Supabase, MDX, and UI.",
       "skills": [
@@ -21,8 +31,15 @@
     },
     {
       "title": "JustHold",
-      "description": "Skills for the JustHold investing workspace — MDX CMS and testing.",
-      "skills": ["justhold-mdx-content", "justhold-testing"]
+      "description": "Skills for the JustHold investing workspace — project foundation, i18n, design, UI, MDX CMS, and testing.",
+      "skills": [
+        "justhold-project",
+        "justhold-i18n",
+        "justhold-design-tokens",
+        "justhold-ui-layout",
+        "justhold-mdx-content",
+        "justhold-testing"
+      ]
     }
   ]
 }

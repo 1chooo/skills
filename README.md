@@ -21,10 +21,14 @@ Or specific skills:
 npx skills add 1chooo/skills --skill api-routes --skill mdx-content
 ```
 
-1chooo.com (Cursor + Copilot):
+### Shared + 1chooo.com (Cursor + Copilot)
 
 ```bash
 npx skills add 1chooo/skills \
+  --skill web-service-stack \
+  --skill nextjs-rsc-patterns \
+  --skill api-supabase-routes \
+  --skill supabase-clients \
   --skill 1chooo-project \
   --skill nextjs-app-router \
   --skill api-routes \
@@ -41,10 +45,18 @@ npx skills add 1chooo/skills \
   -y
 ```
 
-JustHold (Cursor + Copilot):
+### Shared + JustHold (Cursor + Copilot)
 
 ```bash
 npx skills add 1chooo/skills \
+  --skill web-service-stack \
+  --skill nextjs-rsc-patterns \
+  --skill api-supabase-routes \
+  --skill supabase-clients \
+  --skill justhold-project \
+  --skill justhold-i18n \
+  --skill justhold-design-tokens \
+  --skill justhold-ui-layout \
   --skill justhold-mdx-content \
   --skill justhold-testing \
   -a cursor \
@@ -53,6 +65,17 @@ npx skills add 1chooo/skills \
 ```
 
 ## Skills
+
+### Shared
+
+Cross-project web-service conventions for both apps.
+
+| Skill | When to use |
+|-------|-------------|
+| [`web-service-stack`](./web-service-stack) | Stack, code placement, imports, RSC defaults, three shells |
+| [`nextjs-rsc-patterns`](./nextjs-rsc-patterns) | Server/Client split, async params, `proxy.ts`, data fetching |
+| [`api-supabase-routes`](./api-supabase-routes) | REST handlers, Zod, scoped Supabase queries, response shapes |
+| [`supabase-clients`](./supabase-clients) | server / client / service client matrix |
 
 ### 1chooo.com
 
@@ -74,6 +97,10 @@ npx skills add 1chooo/skills \
 
 | Skill | When to use |
 |-------|-------------|
+| [`justhold-project`](./justhold-project) | Stack, shells, defaults, skill index |
+| [`justhold-i18n`](./justhold-i18n) | next-intl locales, messages, admin exception |
+| [`justhold-design-tokens`](./justhold-design-tokens) | Palette, fonts, radius |
+| [`justhold-ui-layout`](./justhold-ui-layout) | Base UI components + public/member/admin shells |
 | [`justhold-mdx-content`](./justhold-mdx-content) | JustHold MDX posts — admin CMS, Supabase metadata, R2 bodies |
 | [`justhold-testing`](./justhold-testing) | JustHold unit, integration, and e2e tests (Vitest / Playwright) |
 
