@@ -1,0 +1,28 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "notGrouped": "bottom",
+  "groupings": [
+    {
+      "title": "1chooo.com",
+      "description": "Conventions for building 1chooo.com — App Router, API routes, Supabase, MDX, and UI.",
+      "skills": [
+        "1chooo-project",
+        "nextjs-app-router",
+        "api-routes",
+        "types-and-constants",
+        "utils-auth-supabase",
+        "mdx-content",
+        "article-components",
+        "components-ui",
+        "services-ui",
+        "services-confirm-toasts",
+        "admin-ui"
+      ]
+    },
+    {
+      "title": "JustHold",
+      "description": "Skills for the JustHold investing workspace — MDX CMS and testing.",
+      "skills": ["justhold-mdx-content", "justhold-testing"]
+    }
+  ]
+}

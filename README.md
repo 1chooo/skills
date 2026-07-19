@@ -7,6 +7,7 @@ Skills by [1chooo](https://github.com/1chooo) for building [1chooo.com](https://
 - skills.sh: [1chooo/skills](https://www.skills.sh/1chooo/skills)
 - Browse on the site: [1chooo.com/skills](https://1chooo.com/skills)
 - Background: [AI Agent](https://1chooo.com/thoughts/ai-agent)
+- Page layout: [`skills.sh.json`](./skills.sh.json) groups skills on the skills.sh repo page
 
 ## Install
 
