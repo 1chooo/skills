@@ -4,7 +4,9 @@
 
 Skills by [1chooo](https://github.com/1chooo) for building [1chooo.com](https://1chooo.com) with AI agents — Next.js, Supabase, MDX, and the rest of the stack.
 
-Browse on the site: [1chooo.com/skills](https://1chooo.com/skills) · Background: [AI Agent](https://1chooo.com/thoughts/ai-agent)
+- skills.sh: [1chooo/skills](https://www.skills.sh/1chooo/skills) · [1chooo.com skill](https://www.skills.sh/1chooo/skills/1chooo.com)
+- Browse on the site: [1chooo.com/skills](https://1chooo.com/skills)
+- Background: [AI Agent](https://1chooo.com/thoughts/ai-agent)
 
 ## Install
 
