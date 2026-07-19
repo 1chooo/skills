@@ -1,4 +1,13 @@
-# API route conventions
+---
+name: api-routes
+description: REST API route handler conventions for 1chooo.com — auth, Zod validation, Supabase, and response shapes
+license: MIT
+metadata:
+  author: 1chooo
+  version: "1.0.0"
+---
+
+# API Route Conventions
 
 All mutations go through Route Handlers — there are no Server Actions (`"use server"`).
 

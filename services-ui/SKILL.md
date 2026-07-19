@@ -1,6 +1,15 @@
-# Services UI conventions
+---
+name: services-ui
+description: Services UI conventions for 1chooo.com — lowercase copy, monospace buttons, forms, workspace shells, and client fetch patterns
+license: MIT
+metadata:
+  author: 1chooo
+  version: "1.0.0"
+---
 
-Authenticated mini-apps under `app/(services)/services/`. Complements [services-confirm-toasts.md](services-confirm-toasts.md) (destructive actions + toasts).
+# Services UI Conventions
+
+Authenticated mini-apps under `app/(services)/services/`. Complements `services-confirm-toasts` skill (destructive actions + toasts).
 
 ## Copy and typography
 

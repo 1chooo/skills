@@ -1,4 +1,13 @@
-# Next.js App Router patterns
+---
+name: nextjs-app-router
+description: Next.js 16 App Router patterns — Server/Client boundaries, async params, layouts, auth guards, and proxy.ts
+license: MIT
+metadata:
+  author: 1chooo
+  version: "1.0.0"
+---
+
+# Next.js App Router Patterns
 
 ## Server Components by default
 

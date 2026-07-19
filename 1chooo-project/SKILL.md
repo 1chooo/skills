@@ -1,4 +1,13 @@
-# Project foundation
+---
+name: 1chooo-project
+description: Foundation conventions for 1chooo.com — stack, route groups, where to put code, imports, and design system
+license: MIT
+metadata:
+  author: 1chooo
+  version: "1.0.0"
+---
+
+# 1chooo.com Project Foundation
 
 Personal site + authenticated mini-apps monolith on **Next.js 16 App Router**, **React 19**, **TypeScript**, **Tailwind CSS v4**, **MDX**, and **Supabase**.
 

@@ -1,4 +1,13 @@
-# Admin button & tab switcher style
+---
+name: admin-ui
+description: Admin UI button and tab switcher conventions — plain buttons, square corners, no Radix Tabs, consistent active/inactive states
+license: MIT
+metadata:
+  author: 1chooo
+  version: "1.0.0"
+---
+
+# Admin Button & Tab Switcher Style
 
 All tab switchers, period selectors, and view toggles in `app/(admin)/` must use plain `<button>` elements — **never** Radix `TabsTrigger`/`TabsList`. Radix `TabsContent` with its base styles causes active-state overrides to fail silently.
 

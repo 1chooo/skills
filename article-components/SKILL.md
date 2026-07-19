@@ -1,4 +1,13 @@
-# Article component conventions
+---
+name: article-components
+description: Layout and style conventions for interactive article demo components in components/articles/ — two-column shell, buttons, right-panel blocks, and file organization
+license: MIT
+metadata:
+  author: 1chooo
+  version: "1.0.0"
+---
+
+# Article Component Conventions
 
 Reference implementations: `components/articles/css-layout/` (`DemoBoxModel`, `DemoFlexbox`, `DemoCSSGrid`, `DemoPosition`).
 

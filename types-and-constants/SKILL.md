@@ -1,4 +1,13 @@
-# Types and constants
+---
+name: types-and-constants
+description: TypeScript types in types/, domain constants in lib/ — never mix. Folder layout and import patterns for 1chooo.com.
+license: MIT
+metadata:
+  author: 1chooo
+  version: "1.0.0"
+---
+
+# Types and Constants
 
 Shared types belong in `types/`, not in `lib/`, API routes, or component files.
 Domain constants (labels, colors, option lists, enum arrays) belong in `lib/`, not in `types/`.

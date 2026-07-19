@@ -1,4 +1,13 @@
-# Utils — auth, Supabase, CORS
+---
+name: utils-auth-supabase
+description: Server-only auth helpers, Supabase client matrix, CORS, and cookie options for 1chooo.com
+license: MIT
+metadata:
+  author: 1chooo
+  version: "1.0.0"
+---
+
+# Utils — Auth, Supabase, CORS
 
 `utils/` is server-only except `utils/supabase/client.ts`. **Never import `utils/auth.ts` in client components.**
 

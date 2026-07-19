@@ -1,4 +1,13 @@
-# Components UI conventions
+---
+name: components-ui
+description: Shared UI primitives in components/ui/ — Radix package, Dialog API, ConfirmDialog, Sonner placement, and Charts
+license: MIT
+metadata:
+  author: 1chooo
+  version: "1.0.0"
+---
+
+# Components UI Conventions
 
 Shared primitives in `components/ui/` — shadcn-style (CVA + Radix). Reference: `components/ui/button.tsx`, `components/ui/dialog.tsx`.
 
@@ -17,8 +26,8 @@ Not `@radix-ui/react-*`. Components use `data-slot="..."` attributes (shadcn v4 
 | Area | Pattern |
 |------|---------|
 | `components/ui/button.tsx` | shadcn CVA (`rounded-md`, `variant`/`size`) — used sparingly |
-| Services | Custom `font-mono text-xs rounded` buttons — see [services-ui.md](services-ui.md) |
-| Admin | Square-cornered plain `<button>` — see [admin-ui.md](admin-ui.md) |
+| Services | Custom `font-mono text-xs rounded` buttons — see `services-ui` rule |
+| Admin | Square-cornered plain `<button>` — see `admin-ui` skill |
 | `ConfirmDialog` | Plain `<button>`, not `Button` |
 
 ## Dialog API

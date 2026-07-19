@@ -1,4 +1,13 @@
-# Services confirm dialogs & toasts
+---
+name: services-confirm-toasts
+description: ConfirmDialog for destructive actions, Sonner toasts for create/delete feedback — never window.confirm() in services UI
+license: MIT
+metadata:
+  author: 1chooo
+  version: "1.0.0"
+---
+
+# Services Confirm Dialogs & Toasts
 
 Do not use `window.confirm()` or `alert()` in services UI. Use the shared `ConfirmDialog` and Sonner toasts so feedback matches the app design.
 
