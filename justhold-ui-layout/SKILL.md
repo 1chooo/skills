@@ -7,10 +7,11 @@ description: >-
 license: MIT
 metadata:
   author: 1chooo
-  version: "1.0.0"
+  version: "1.1.0"
 paths:
-  - "components/**/*.tsx"
-  - "app/**/*.tsx"
+  - "apps/web/components/**/*.tsx"
+  - "apps/web/app/**/*.tsx"
+  - "packages/ui/**/*.tsx"
 ---
 
 # JustHold UI + Layout
@@ -19,7 +20,7 @@ Also follow `justhold-design-tokens` for colors/fonts and Shared `web-service-st
 
 ## UI components
 
-- Base UI primitives (`@base-ui/react`) + `class-variance-authority` for variants, following shadcn's `base-nova` style. Canonical pattern: `components/ui/button.tsx` (`cva` variants, `cn()` merge, `data-slot`).
+- Base UI primitives (`@base-ui/react`) + `class-variance-authority` for variants, following shadcn's `base-nova` style. Canonical pattern: `packages/ui/src/components/button.tsx` — import as `@justhold/ui/components/button` (`cva` variants, `cn()` from `@justhold/ui/lib/utils`, `data-slot`).
 - One-off styled links (nav CTAs, hero buttons) are hand-rolled `<Link>`s with utility classes — match existing patterns (`rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90`) instead of forcing `Button`.
 - Category/status pills: `inline-flex items-center rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground`.
 - Icons from `lucide-react`, sized with `size-*` (not `h-*`/`w-*`), `aria-hidden="true"` when decorative.
@@ -57,8 +58,8 @@ Stack full-bleed `<section>` blocks separated by `border-b border-border`, each 
 
 ## Landing product demos
 
-- **Multi-window / Play script** → skill `cursor-style-desktop-demo` (portable pattern; our home `#big-money` stage is one instance). Wider stage wrapper `max-w-360`.
-- **Single framed widget** → `ProductFrame`. Do not nest a desktop stage inside `ProductFrame`.
+- **Multi-window / Play script** → Shared skill `cursor-style-desktop-demo`. Use a wider stage wrapper than the copy band.
+- **Single framed widget** → simple product chrome frame. Do not nest a desktop stage inside it.
 
 ## Cards & interactive tiles
 
