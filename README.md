@@ -53,6 +53,7 @@ npx skills add 1chooo/skills \
   --skill nextjs-rsc-patterns \
   --skill api-supabase-routes \
   --skill supabase-clients \
+  --skill cursor-style-desktop-demo \
   --skill justhold-project \
   --skill justhold-i18n \
   --skill justhold-design-tokens \
@@ -76,6 +77,7 @@ Cross-project web-service conventions for both apps.
 | [`nextjs-rsc-patterns`](./nextjs-rsc-patterns) | Server/Client split, async params, `proxy.ts`, data fetching |
 | [`api-supabase-routes`](./api-supabase-routes) | REST handlers, Zod, scoped Supabase queries, response shapes |
 | [`supabase-clients`](./supabase-clients) | server / client / service client matrix |
+| [`cursor-style-desktop-demo`](./cursor-style-desktop-demo) | Wallpaper desktop stage, overlapping windows, manual-first Play script |
 
 ### 1chooo.com
 

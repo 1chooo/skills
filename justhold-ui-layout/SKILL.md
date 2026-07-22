@@ -55,6 +55,11 @@ Also follow `justhold-design-tokens` for colors/fonts and Shared `web-service-st
 
 Stack full-bleed `<section>` blocks separated by `border-b border-border`, each with its own `max-w-*` inner wrapper and vertical rhythm `py-12`–`py-16` (`md:py-14`–`md:py-24` for hero). Section headings use `font-heading text-2xl font-semibold tracking-tight`.
 
+## Landing product demos
+
+- **Multi-window / Play script** → skill `cursor-style-desktop-demo` (portable pattern; our home `#big-money` stage is one instance). Wider stage wrapper `max-w-360`.
+- **Single framed widget** → `ProductFrame`. Do not nest a desktop stage inside `ProductFrame`.
+
 ## Cards & interactive tiles
 
 Clickable cards are a single `<Link>` wrapping the whole tile: `rounded-xl border border-border bg-card p-6 transition-colors hover:border-primary/50`, with `group` for child hover motion (`group-hover:-translate-y-0.5 group-hover:translate-x-0.5`).

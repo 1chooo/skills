@@ -9,7 +9,8 @@
         "web-service-stack",
         "nextjs-rsc-patterns",
         "api-supabase-routes",
-        "supabase-clients"
+        "supabase-clients",
+        "cursor-style-desktop-demo"
       ]
     },
     {

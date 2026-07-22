@@ -39,6 +39,7 @@ Next.js App Router, React 19, Supabase (Auth + Postgres + RLS), Tailwind CSS v4,
 | `justhold-i18n` | Locales, messages, admin exception |
 | `justhold-design-tokens` | Palette, fonts, radius |
 | `justhold-ui-layout` | UI primitives + page shells |
+| `cursor-style-desktop-demo` | Landing multi-window Play demos (Cursor get-started style) |
 | `justhold-mdx-content` | Admin CMS MDX posts (Supabase + R2) |
 | `justhold-testing` | Vitest unit/integration + Playwright e2e |
 
