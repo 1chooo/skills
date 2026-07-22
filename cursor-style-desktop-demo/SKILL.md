@@ -8,7 +8,7 @@ description: >-
 license: MIT
 metadata:
   author: 1chooo
-  version: "1.1.0"
+  version: "1.1.1"
 ---
 
 # Cursor-style landing desktop demo
@@ -209,10 +209,10 @@ function XxxDesktopDemo() {
   )
 }
 
-// Page: copy band max-w-6xl; stage band wider max-w-[90rem] so wallpaper margins breathe
+// Page: copy band max-w-6xl; stage band wider max-w-360 (90rem) so wallpaper margins breathe
 <section className="overflow-hidden border-b border-border">
   <div className="mx-auto max-w-6xl px-4 md:px-6">{/* heading + sentence + CTA */}</div>
-  <div className="mx-auto max-w-[90rem] px-4 md:px-8">
+  <div className="mx-auto max-w-360 px-4 md:px-8">
     <XxxDesktopDemo />
   </div>
 </section>
