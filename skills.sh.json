@@ -4,12 +4,13 @@
   "groupings": [
     {
       "title": "Shared",
-      "description": "Cross-project web-service conventions for 1chooo.com and JustHold — App Router, API routes, and Supabase clients.",
+      "description": "Cross-project web-service conventions for 1chooo.com and JustHold — App Router, API routes, Supabase clients, and git commits.",
       "skills": [
         "web-service-stack",
         "nextjs-rsc-patterns",
         "api-supabase-routes",
         "supabase-clients",
+        "git-commits",
         "cursor-style-desktop-demo"
       ]
     },

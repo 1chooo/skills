@@ -9,7 +9,7 @@ metadata:
 
 # 1chooo.com Project Foundation
 
-Also follow Shared skills: `web-service-stack`, `nextjs-rsc-patterns`, `api-supabase-routes`, `supabase-clients`.
+Also follow Shared skills: `web-service-stack`, `nextjs-rsc-patterns`, `api-supabase-routes`, `supabase-clients`, `git-commits`.
 
 Personal site + authenticated mini-apps monolith on **Next.js 16 App Router**, **React 19**, **TypeScript**, **Tailwind CSS v4**, **MDX**, and **Supabase**.
 
