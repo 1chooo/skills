@@ -79,7 +79,7 @@ Cross-project web-service conventions for both apps.
 | [`nextjs-rsc-patterns`](./nextjs-rsc-patterns) | Server/Client split, async params, `proxy.ts`, data fetching |
 | [`api-supabase-routes`](./api-supabase-routes) | REST handlers, Zod, scoped Supabase queries, response shapes |
 | [`supabase-clients`](./supabase-clients) | server / client / service client matrix |
-| [`git-commits`](./git-commits) | Step-narrative commits; split diffs; commit message style |
+| [`git-commits`](./git-commits) | Step-narrative commits; plan the chain; split diffs; commit message style |
 | [`cursor-style-desktop-demo`](./cursor-style-desktop-demo) | Wallpaper desktop stage, overlapping windows, manual-first Play script |
 
 ### 1chooo.com
