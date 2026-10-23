@@ -42,6 +42,13 @@
         "justhold-mdx-content",
         "justhold-testing"
       ]
+    },
+    {
+      "title": "Agent",
+      "description": "Coding-agent workflow for exploring, debugging, reviewing, and implementing with modest token use.",
+      "skills": [
+        "1chooo-balanced-context"
+      ]
     }
   ]
 }

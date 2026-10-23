@@ -109,6 +109,12 @@ Cross-project web-service conventions for both apps.
 | [`justhold-mdx-content`](./justhold-mdx-content) | JustHold MDX posts — admin CMS, Supabase metadata, R2 bodies |
 | [`justhold-testing`](./justhold-testing) | JustHold unit, integration, and e2e tests (Vitest / Playwright) |
 
+### Agent
+
+| Skill | When to use |
+|-------|-------------|
+| [`1chooo-balanced-context`](./1chooo-balanced-context) | Modest token savings while keeping enough context to implement, debug, or review |
+
 ## Stack these skills target
 
 - Next.js 16 App Router & React 19
