@@ -1,5 +1,5 @@
 ---
-name: git-commits
+name: 1chooo-commits
 description: >-
   Write git history as small conventional commits, each a step a later
   reader can replay. Use when the user asks to commit, split a diff, write
@@ -11,7 +11,7 @@ metadata:
   version: "1.4.0"
 ---
 
-# Git Commits
+# 1chooo Commits
 
 Each commit is a **step**. `git log` should reconstruct the path. Why over what. No fluff.
 

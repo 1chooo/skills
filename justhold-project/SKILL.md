@@ -12,7 +12,7 @@ metadata:
 
 # JustHold Project Foundation
 
-Also follow Shared skills: `web-service-stack`, `nextjs-rsc-patterns`, `api-supabase-routes`, `supabase-clients`, `git-commits`.
+Also follow Shared skills: `web-service-stack`, `nextjs-rsc-patterns`, `api-supabase-routes`, `supabase-clients`, `1chooo-commits`.
 
 ## Stack
 
