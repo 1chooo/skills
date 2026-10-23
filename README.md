@@ -1,103 +1,119 @@
 # 1chooo/skills
 
-[![skills.sh](https://skills.sh/b/1chooo/skills)](https://www.skills.sh/1chooo)
+[![skills.sh](https://skills.sh/b/1chooo/skills)](https://skills.sh/1chooo/skills)
 
-Skills by [1chooo](https://github.com/1chooo), divided by source. Each source is its own repository and has its own categories, same shape as [vercel-labs](https://www.skills.sh/vercel-labs).
+Skills by [1chooo](https://github.com/1chooo) for building [1chooo.com](https://1chooo.com) and [JustHold](https://github.com/1chooo/justhold) with AI agents — Next.js, Supabase, MDX, and the rest of the stack.
 
-- Org page: [skills.sh/1chooo](https://www.skills.sh/1chooo)
-- Site: [1chooo.com/skills](https://1chooo.com/skills)
+- skills.sh: [1chooo/skills](https://www.skills.sh/1chooo/skills)
+- Browse on the site: [1chooo.com/skills](https://1chooo.com/skills)
 - Background: [AI Agent](https://1chooo.com/thoughts/ai-agent)
-
-This repository is the index. Install a source from the table.
-
-## Sources
-
-| Source | Categories | Install |
-|--------|------------|---------|
-| [dev-habits](https://github.com/1chooo/dev-habits) | Commits | `npx skills add 1chooo/dev-habits` |
-| [agent-workflow](https://github.com/1chooo/agent-workflow) | Context | `npx skills add 1chooo/agent-workflow` |
-| [web](https://github.com/1chooo/web) | Stack, Data, UI | `npx skills add 1chooo/web` |
-| [site](https://github.com/1chooo/site) | Foundation, Routing, Data, Content, UI | `npx skills add 1chooo/site` |
-| [justhold-skills](https://github.com/1chooo/justhold-skills) | Foundation, Design, Content, Testing | `npx skills add 1chooo/justhold-skills` |
-
-`1chooo/justhold` is the private app, so the public JustHold skills live in [justhold-skills](https://github.com/1chooo/justhold-skills).
+- Page layout: [`skills.sh.json`](./skills.sh.json) groups skills on the skills.sh repo page
 
 ## Install
 
-### 1chooo.com
+```bash
+npx skills add 1chooo/skills
+```
 
-Shared web conventions, the site skills, and the commit habit.
+Or specific skills:
 
 ```bash
-npx skills add 1chooo/web -a cursor -a github-copilot -y
-npx skills add 1chooo/site -a cursor -a github-copilot -y
-npx skills add 1chooo/dev-habits -a cursor -a github-copilot -y
+npx skills add 1chooo/skills --skill api-routes --skill mdx-content
 ```
+
+### Shared + 1chooo.com (Cursor + Copilot)
+
+```bash
+npx skills add 1chooo/skills \
+  --skill web-service-stack \
+  --skill nextjs-rsc-patterns \
+  --skill api-supabase-routes \
+  --skill supabase-clients \
+  --skill 1chooo-commits \
+  --skill 1chooo-project \
+  --skill nextjs-app-router \
+  --skill api-routes \
+  --skill types-and-constants \
+  --skill utils-auth-supabase \
+  --skill mdx-content \
+  --skill article-components \
+  --skill components-ui \
+  --skill services-ui \
+  --skill services-confirm-toasts \
+  --skill admin-ui \
+  -a cursor \
+  -a github-copilot \
+  -y
+```
+
+### Shared + JustHold (Cursor + Copilot)
+
+```bash
+npx skills add 1chooo/skills \
+  --skill web-service-stack \
+  --skill nextjs-rsc-patterns \
+  --skill api-supabase-routes \
+  --skill supabase-clients \
+  --skill 1chooo-commits \
+  --skill cursor-style-desktop-demo \
+  --skill justhold-project \
+  --skill justhold-i18n \
+  --skill justhold-design-tokens \
+  --skill justhold-ui-layout \
+  --skill justhold-mdx-content \
+  --skill justhold-testing \
+  -a cursor \
+  -a github-copilot \
+  -y
+```
+
+## Skills
+
+### Shared
+
+Cross-project web-service conventions for both apps.
+
+| Skill | When to use |
+|-------|-------------|
+| [`web-service-stack`](./web-service-stack) | Stack, code placement, imports, RSC defaults, three shells |
+| [`nextjs-rsc-patterns`](./nextjs-rsc-patterns) | Server/Client split, async params, `proxy.ts`, data fetching |
+| [`api-supabase-routes`](./api-supabase-routes) | REST handlers, Zod, scoped Supabase queries, response shapes |
+| [`supabase-clients`](./supabase-clients) | server / client / service client matrix |
+| [`1chooo-commits`](./1chooo-commits) | Step-narrative commits; plan the chain; split diffs; commit message style |
+| [`cursor-style-desktop-demo`](./cursor-style-desktop-demo) | Wallpaper desktop stage, overlapping windows, manual-first Play script |
+
+### 1chooo.com
+
+| Skill | When to use |
+|-------|-------------|
+| [`1chooo-project`](./1chooo-project) | Stack, route groups, code placement, imports, design system |
+| [`nextjs-app-router`](./nextjs-app-router) | Server/Client split, async params, `proxy.ts`, workspace shells |
+| [`api-routes`](./api-routes) | REST handlers, Zod, `requireUser()`, response shapes |
+| [`types-and-constants`](./types-and-constants) | `types/` vs `lib/`, NavItem collision |
+| [`utils-auth-supabase`](./utils-auth-supabase) | Supabase clients, cookies, CORS, auth helpers |
+| [`mdx-content`](./mdx-content) | Articles, frontmatter, demos, LLM routes |
+| [`article-components`](./article-components) | Two-column demos, rurikon article UI |
+| [`components-ui`](./components-ui) | Radix, Dialog, ConfirmDialog, Sonner, Charts |
+| [`services-ui`](./services-ui) | Lowercase copy, mono buttons, workspace shells |
+| [`services-confirm-toasts`](./services-confirm-toasts) | Destructive confirms, toast rules |
+| [`admin-ui`](./admin-ui) | Square admin tab switchers |
 
 ### JustHold
 
-```bash
-npx skills add 1chooo/web -a cursor -a github-copilot -y
-npx skills add 1chooo/justhold-skills -a cursor -a github-copilot -y
-npx skills add 1chooo/dev-habits -a cursor -a github-copilot -y
-```
+| Skill | When to use |
+|-------|-------------|
+| [`justhold-project`](./justhold-project) | Stack, shells, defaults, skill index |
+| [`justhold-i18n`](./justhold-i18n) | next-intl locales, messages, admin exception |
+| [`justhold-design-tokens`](./justhold-design-tokens) | Palette, fonts, radius |
+| [`justhold-ui-layout`](./justhold-ui-layout) | Base UI components + public/member/admin shells |
+| [`justhold-mdx-content`](./justhold-mdx-content) | JustHold MDX posts — admin CMS, Supabase metadata, R2 bodies |
+| [`justhold-testing`](./justhold-testing) | JustHold unit, integration, and e2e tests (Vitest / Playwright) |
 
-### Agent workflow
-
-```bash
-npx skills add 1chooo/agent-workflow -a cursor -a github-copilot -y
-```
-
-## Where each skill lives
-
-### dev-habits
+### Agent
 
 | Skill | When to use |
 |-------|-------------|
-| [`1chooo-commits`](https://github.com/1chooo/dev-habits/tree/main/1chooo-commits) | Step-narrative commits; plan the chain; split diffs; commit message style |
-
-### agent-workflow
-
-| Skill | When to use |
-|-------|-------------|
-| [`1chooo-balanced-context`](https://github.com/1chooo/agent-workflow/tree/main/1chooo-balanced-context) | Exploring, debugging, reviewing, or implementing with modest token use |
-
-### web
-
-| Skill | When to use |
-|-------|-------------|
-| [`web-service-stack`](https://github.com/1chooo/web/tree/main/web-service-stack) | Stack, code placement, imports, RSC defaults, three shells |
-| [`nextjs-rsc-patterns`](https://github.com/1chooo/web/tree/main/nextjs-rsc-patterns) | Server/Client split, async params, `proxy.ts`, data fetching |
-| [`api-supabase-routes`](https://github.com/1chooo/web/tree/main/api-supabase-routes) | REST handlers, Zod, scoped Supabase queries, response shapes |
-| [`supabase-clients`](https://github.com/1chooo/web/tree/main/supabase-clients) | server / client / service client matrix |
-| [`cursor-style-desktop-demo`](https://github.com/1chooo/web/tree/main/cursor-style-desktop-demo) | Wallpaper desktop stage, overlapping windows, manual-first Play script |
-
-### site
-
-| Skill | When to use |
-|-------|-------------|
-| [`1chooo-project`](https://github.com/1chooo/site/tree/main/1chooo-project) | Stack, route groups, code placement, imports, design system |
-| [`nextjs-app-router`](https://github.com/1chooo/site/tree/main/nextjs-app-router) | Server/Client split, async params, `proxy.ts`, workspace shells |
-| [`api-routes`](https://github.com/1chooo/site/tree/main/api-routes) | REST handlers, Zod, `requireUser()`, response shapes |
-| [`types-and-constants`](https://github.com/1chooo/site/tree/main/types-and-constants) | `types/` vs `lib/`, NavItem collision |
-| [`utils-auth-supabase`](https://github.com/1chooo/site/tree/main/utils-auth-supabase) | Supabase clients, cookies, CORS, auth helpers |
-| [`mdx-content`](https://github.com/1chooo/site/tree/main/mdx-content) | Articles, frontmatter, demos, LLM routes |
-| [`article-components`](https://github.com/1chooo/site/tree/main/article-components) | Two-column demos, rurikon article UI |
-| [`components-ui`](https://github.com/1chooo/site/tree/main/components-ui) | Radix, Dialog, ConfirmDialog, Sonner, Charts |
-| [`services-ui`](https://github.com/1chooo/site/tree/main/services-ui) | Lowercase copy, mono buttons, workspace shells |
-| [`services-confirm-toasts`](https://github.com/1chooo/site/tree/main/services-confirm-toasts) | Destructive confirms, toast rules |
-| [`admin-ui`](https://github.com/1chooo/site/tree/main/admin-ui) | Square admin tab switchers |
-
-### justhold-skills
-
-| Skill | When to use |
-|-------|-------------|
-| [`justhold-project`](https://github.com/1chooo/justhold-skills/tree/main/justhold-project) | Stack, shells, defaults, skill index |
-| [`justhold-i18n`](https://github.com/1chooo/justhold-skills/tree/main/justhold-i18n) | next-intl locales, messages, admin exception |
-| [`justhold-design-tokens`](https://github.com/1chooo/justhold-skills/tree/main/justhold-design-tokens) | Palette, fonts, radius |
-| [`justhold-ui-layout`](https://github.com/1chooo/justhold-skills/tree/main/justhold-ui-layout) | Base UI components + public/member/admin shells |
-| [`justhold-mdx-content`](https://github.com/1chooo/justhold-skills/tree/main/justhold-mdx-content) | JustHold MDX posts — admin CMS, Supabase metadata, R2 bodies |
-| [`justhold-testing`](https://github.com/1chooo/justhold-skills/tree/main/justhold-testing) | Unit, integration, and e2e tests (Vitest / Playwright) |
+| [`1chooo-balanced-context`](./1chooo-balanced-context) | Reduce unnecessary coding-agent tokens while preserving task-relevant understanding |
 
 ## Stack these skills target
 

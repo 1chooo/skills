@@ -1,0 +1,54 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "notGrouped": "bottom",
+  "groupings": [
+    {
+      "title": "Shared",
+      "description": "Cross-project web-service conventions for 1chooo.com and JustHold — App Router, API routes, Supabase clients, and git commits.",
+      "skills": [
+        "web-service-stack",
+        "nextjs-rsc-patterns",
+        "api-supabase-routes",
+        "supabase-clients",
+        "1chooo-commits",
+        "cursor-style-desktop-demo"
+      ]
+    },
+    {
+      "title": "1chooo.com",
+      "description": "Conventions for building 1chooo.com — App Router, API routes, Supabase, MDX, and UI.",
+      "skills": [
+        "1chooo-project",
+        "nextjs-app-router",
+        "api-routes",
+        "types-and-constants",
+        "utils-auth-supabase",
+        "mdx-content",
+        "article-components",
+        "components-ui",
+        "services-ui",
+        "services-confirm-toasts",
+        "admin-ui"
+      ]
+    },
+    {
+      "title": "JustHold",
+      "description": "Skills for the JustHold investing workspace — project foundation, i18n, design, UI, MDX CMS, and testing.",
+      "skills": [
+        "justhold-project",
+        "justhold-i18n",
+        "justhold-design-tokens",
+        "justhold-ui-layout",
+        "justhold-mdx-content",
+        "justhold-testing"
+      ]
+    },
+    {
+      "title": "Agent",
+      "description": "Coding-agent workflow for exploring, debugging, reviewing, and implementing with modest token use.",
+      "skills": [
+        "1chooo-balanced-context"
+      ]
+    }
+  ]
+}
