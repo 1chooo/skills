@@ -1,89 +1,76 @@
 ---
 name: 1chooo-balanced-context
-description: Reduce unnecessary coding-agent tokens while preserving task-relevant understanding. Use when the user requests balanced token usage or invokes this skill for code exploration, debugging, review, or implementation in Cursor, Grok Build, or another coding agent.
+description: Keep coding-agent context small without dropping evidence that could change the answer. Use when exploring, debugging, reviewing, or implementing code, or when the user asks for balanced token use in Cursor, Grok Build, or another coding agent.
 license: MIT
 metadata:
-  author: 1chooo
-  version: "1.1.0"
+  author: 1chooo.com
+  version: "1.0.0"
 ---
 
-# 1chooo Balanced Context
+# Balanced Context
 
-Reduce irrelevant reads, repeated retrieval, and oversized output. Preserve evidence that could change the implementation or conclusion. Prioritize correct task completion over a token target.
+Finish the task on the evidence that could change the answer. This skill is the reference for how far to look, when to stop, and what to keep. A smaller transcript is a side effect of skipping work that cannot change the result. It is not a target you hit by stopping early.
 
-Follow repository instructions and the user's authorized scope. Use existing tools; do not install dependencies, configure MCP, add hooks, or change permissions just to apply this skill.
+Follow the repository instructions and the user's authorized scope. Use the tools you already have. Do not install dependencies, configure MCP, add hooks, or change permissions just to apply this skill.
 
-## 1. Choose the shortest sufficient path
+## Start from what you were given
 
-- Start from supplied paths, symbols, errors, or diffs. Read relevant repository instructions.
-- For a small task in a known file, read it directly. Skip outlines, planning, and context tracking when they add overhead.
-- Before each lookup, identify internally what uncertainty it should resolve. Do not narrate routine lookups.
-- Expand exploration only when the answer could affect the task.
+Begin with the paths, symbols, errors, or diffs in the request, and read the repository instructions that apply. A small task in a known file is a direct read. Skip an outline, a plan, and a context tracker when they cost more than opening the file.
 
-## 2. Locate with compact output
+Before a lookup, name the uncertainty it should close. Leave routine searches out of the narration.
 
-- Prefer scoped filename searches or `rg -l` to identify files; use `rg -n` for relevant matches.
-- Initially exclude dependencies, generated output, binaries, and lockfiles. Inspect them when evidence points there.
-- Respect ignore rules and keep secrets out of tool output.
-- If already exposed to the agent, use AST/Tree-sitter outlines for structure and LSP/Serena for definitions or references. Otherwise use text search.
-- Request paths, symbols, signatures, and locations during navigation. Avoid full AST dumps or verbose JSON unless needed for processing.
-- Narrow or paginate oversized results. Treat capped or truncated output as incomplete, never exhaustive.
+Search with compact output. Prefer a scoped filename search or `rg -l` to find files, then `rg -n` for the matches you need. Leave dependencies, generated output, binaries, and lockfiles out until the evidence points there. Respect ignore rules, and keep secrets out of tool output.
 
-## 3. Read enough to explain behavior
+Use an AST or Tree-sitter outline for structure when one is already available, and LSP or Serena for definitions and references when those are already available. Otherwise search the text. Request paths, symbols, signatures, and locations. Take a full AST dump or a verbose JSON blob only when you are about to process it. Narrow or paginate a result that is too large. Treat a capped or truncated result as incomplete.
 
-Use navigation results to find source; do not treat outlines, signatures, or summaries as proof of runtime behavior.
+## Read enough to explain the behavior
 
-- Read the complete relevant logical unit, including branches, early returns, error handling, and cleanup.
-- Inspect surrounding imports, types, constants, enclosing control flow, and state that can affect that unit.
-- For large functions or components, begin with the relevant block and its dependencies. Read the entire enclosing unit when interactions are distributed or uncertain.
-- Read small files whole when doing so is cheaper than repeated partial reads.
-- Follow callers and callees when their contracts, behavior, or side effects could influence the change. Do not recursively explore unrelated dependencies.
-- For shared API or type changes, inspect affected consumers and package boundaries. For auth, money, migrations, or destructive operations, trace the relevant boundary and failure paths.
+An outline, a signature, or a summary is a map. The source is what runs.
 
-## 4. Expand when uncertainty matters
+Read the logical unit that matters, whole: its branches, early returns, error handling, and cleanup, plus the imports, types, constants, enclosing control flow, and state that can change that unit. In a large function or component, start at the relevant block and the dependencies it uses. Read the enclosing unit when those interactions are spread out or still unclear. Read a small file whole when that costs less than several partial reads.
 
-Read additional source when encountering unresolved symbols, wrappers, re-exports, dynamic dispatch, runtime configuration, conflicting evidence, or unclear side effects.
+Follow a caller or callee when its contract, behavior, or side effects could change the edit. Stop at unrelated dependencies. A shared API or type change means you read the affected consumers and the package boundary. Auth, money, migrations, and destructive operations mean you trace the boundary and the failure paths.
 
-- Separate verified facts from hypotheses. Investigate unknowns that could change the implementation, conclusion, or validation.
-- Treat empty searches as inconclusive. Before relying on absence, check relevant scope, aliases, ignored paths, and index freshness.
-- Do not assume LSP references capture every runtime dependency.
-- If required evidence is inaccessible, explain the limitation and qualify the conclusion.
-- Never impose a hard token, file-count, or read-count limit on necessary evidence.
+## Widen the search when the uncertainty matters
 
-## 5. Stop exploration when evidence is sufficient
+Read further for an unresolved symbol, a wrapper, a re-export, dynamic dispatch, runtime configuration, conflicting evidence, or a side effect you cannot yet name. Keep verified facts separate from hypotheses. Chase the unknown that could change the implementation, the conclusion, or the validation.
 
-Proceed when source evidence supports:
+An empty search does not show absence. Check the scope, aliases, ignored paths, and index freshness before you treat a miss as real. LSP references miss some runtime dependencies. When the evidence you need is inaccessible, say so and qualify the conclusion.
 
-1. The current behavior and requested difference.
-2. Relevant inputs, conditions, outputs, and side effects.
-3. The boundaries or consumers affected by the proposed change.
-4. Appropriate validation and any remaining uncertainty.
+**No budget on necessary evidence.** Do not stop a read because of a token cap, a file count, or a read count.
 
-Apply these criteria proportionally to the task. Continue investigating if an unresolved question could materially change the solution. Avoid repeatedly confirming facts already established.
+## Stop when four things are accounted for
 
-## 6. Reuse context without trusting stale details
+Proceed when you can name:
 
-- Reuse source that remains available and current in the conversation.
-- Distinguish directly inspected source from remembered summaries. Reconfirm exact details before making edits that depend on them.
-- Re-read affected ranges after edits, branch changes, external changes, or stale-index indications.
-- For long tasks or context compaction, retain a short working summary of the goal, verified behavior, relevant paths/symbols, decisions, validation, and unresolved questions.
-- Preserve constraints and reasons behind decisions, not merely a list of files read.
-- Use summaries to recover direction; inspect original source when critical details are missing.
-- Do not create tracking files for routine tasks or repeat source excerpts already available.
+1. The current behavior, and the difference the task asks for.
+2. The inputs, conditions, outputs, and side effects that matter.
+3. The boundaries and consumers the change touches.
+4. The validation you will run, and the uncertainty that remains.
 
-## 7. Preserve diagnostic evidence and validate
+Scale that list to the task. Keep going when an open question could materially change the solution. Do not fetch again a fact you have already established.
 
-- Prefer concise successful-command output, while retaining exit status and useful summaries.
-- Keep failure messages, stack traces, and relevant diagnostics accessible. Inspect raw logs when compression or truncation hides the cause.
-- Do not treat summarized output as proof that every check passed.
-- Reuse existing command results; rerun only when changes, failures, or uncertainty justify it.
-- Inspect the final diff and run repository-required checks plus validation appropriate to the affected behavior.
-- Expand testing for failures or broader impact. Never skip required checks to save tokens.
+## Reuse what you already inspected
 
-## 8. Report concisely and evaluate honestly
+Use source that is still in the conversation and still current. A summary you remember is not the file. Reconfirm the exact lines before an edit that depends on them. Re-read the affected range after an edit, a branch change, an external change, or a sign the index is stale.
 
-Report the outcome, meaningful validation, and remaining limitations in the user's language. Avoid lookup transcripts and unsupported certainty.
+On a long task, or after the context is compacted, keep a short working note: the goal, the verified behavior, the paths and symbols, the decisions and why, the validation, and the open questions. The note gets you back to the source. It does not stand in for it. Skip a tracking file on a routine task, and skip pasting a source excerpt you already have.
 
-Do not claim measured token savings without comparable usage data. Evaluate total task tokens, including skill overhead, retries, and corrections, alongside successful completion and correctness.
+## Check the result, then report it
 
-For trial comparisons, use similar tasks with the same model and settings. Retain this workflow only where reduced retrieval overhead outweighs its own cost.
+Keep a successful command short, and keep its exit status and the useful summary. Keep the failure message, the stack, and the diagnostic that explains the failure. Open the raw log when a summary hides the cause. A summarized run does not show that every check passed.
+
+Reuse a command result you already have. Rerun it when the code changed, the run failed, or you are no longer sure. Read the final diff. Run the checks the repository requires, and a check that matches the behavior you changed. Widen the tests when something fails or the blast radius is larger than the edit. A required check still runs.
+
+Report the outcome, the validation that mattered, and the limitation that remains, in the user's language. Leave the lookup transcript out. Claim a measured token saving only with comparable usage data. Judge the whole task together: tokens spent, including this skill, retries, and corrections, and whether the result is finished and correct.
+
+For a trial, use similar tasks on the same model and the same settings. Keep this workflow where the retrieval you skipped outweighs the skill itself.
+
+## Anti-patterns
+
+- **Reading the repo to get oriented.** Start from the path, symbol, error, or diff you were given.
+- **Treating the map as the run.** An outline, a signature, a search hit, or a remembered summary does not establish runtime behavior.
+- **A hard stop.** A token, file, or read budget that cuts off evidence the conclusion still depends on.
+- **Proving a negative from one empty search.** Check scope, aliases, ignored paths, and whether the index is fresh.
+- **Skipping a required check to stay short.** Widen validation when the failure or the blast radius calls for it.
+- **Narrating the search.** Report the outcome, the check that mattered, and what is still unknown.

@@ -8,14 +8,18 @@ description: >-
 license: MIT
 metadata:
   author: 1chooo
-  version: "1.4.0"
+  version: "1.5.0"
 ---
 
 # 1chooo Commits
 
-Each commit is a **step**. `git log` should reconstruct the path. Why over what. No fluff.
+A commit is one step. `git log` should let a later reader replay the path. This skill is the reference for that step: the subject, the scope, when a body earns its place, and how to split a mixed diff into a chain. Consult it before you stage.
 
-## Format
+Read `git log` before you invent a scope. Commit only after the user asks. Stay on the current branch, including `main`, in the repo that owns the files. Stay local until the user asks to push.
+
+## What a good commit is
+
+The subject stands alone in `git log --oneline`. It names one step, in the imperative. The body, when the subject cannot carry it, says why.
 
 ```
 type(scope): imperative summary
@@ -27,36 +31,27 @@ optional footer
 
 Scope may be omitted: `type: imperative summary`.
 
-Ticket known, and this repo puts tickets in scope:
-
-```
-type(<TICKET-NUM>): <imperative verb> rest of summary
-```
-
 Types: `feat` `fix` `refactor` `perf` `docs` `test` `chore` `style` `build` `ci` `revert`
 
-- Scope: ticket ID when the repo uses tickets as scope; else the app, package, or area. Omit when the ticket stays on the branch and pull request, or when nothing more specific than the type exists. Infer from `git log`.
-- Subject: imperative, lowercase after the colon, no trailing period. ≤50 characters when possible, hard cap 72.
-- Body: skip when the subject is enough. Why, not a file list.
-- Breaking: `type(scope)!:` plus a `BREAKING CHANGE:` footer.
+- **Subject.** Imperative, lowercase after the colon, no trailing period. Aim for 50 characters. Hard cap 72. `add`, not `added` or `adds`.
+- **Body.** Skip it when the subject is enough. Write why, not a file list. Always write one for a breaking change, a security fix, a data migration, or a revert.
+- **Breaking.** `type(scope)!:` plus a `BREAKING CHANGE:` footer that says what callers must do.
 
-Validate: allowed type; imperative verb (`add`, not `added` or `adds`); body and footer only when they add information the subject cannot.
+Validate before you commit: the type is on the list, the verb is imperative, and any body or footer adds something the subject cannot.
+
+Leave these out of the message: "This commit does X", "I", "we", "now", "currently"; AI attribution (`Generated with …`, Co-authored-by an AI); emoji, unless this repo already uses it; a filename the scope already names; customer names, emails, support-ticket contents, secrets, or other personal data. Describe the technical symptom.
 
 ## Scope
 
-Read `git log` and the repo's rules before placing a ticket. Do not invent ticket IDs. One ID per commit.
+**Ticket is the scope** when this repo already writes `feat(JH-142):`. Do not invent ticket IDs. One ID per commit. The ticket wins over the app name. If both matter, name the app in the summary (`feat(JH-142): add web member checkout`) or in the body. The ticket is already in scope, so do not also write `Closes JH-142`.
 
-**Ticket is the scope** when the repo already writes `feat(JH-142):`. Ticket wins over the app name. If both matter, name the app in the summary (`feat(JH-142): add web member checkout`) or the body.
-
-**Ticket stays off the subject** when the repo keeps it on the branch and the pull request title. Write `type:` or `type(area):`. Do not start the subject with the key, and do not put the key in scope.
+**Ticket stays off the subject** when the repo keeps it on the branch and the pull request title. Write `type:` or `type(area):`.
 
 ```
 fix: soften the press ripple
 ```
 
-Not `PROJ-12: soften the press ripple`.
-
-**No ticket** → scope is the app or package, not a restatement of the type:
+**No ticket.** Scope the app or package.
 
 ```
 feat(web): ...
@@ -64,43 +59,35 @@ feat(mobile): ...
 fix(api): ...
 ```
 
-Do not duplicate the type as scope (`docs(docs):`, `test(test):`, `chore(chore):`). Scope the thing documented or tested, not the `docs` or `test` folder.
+Scope the thing you changed. Do not restate the type (`docs(docs):`, `test(test):`, `chore(chore):`).
 
-| Situation | Use | Not |
-|-----------|-----|-----|
-| Feature in the web app | `feat(web):` | `feat(feat):` |
-| Docs about the web app | `docs(web):` | `docs(docs):` |
-| Repo-wide docs, or a `docs` package with no better target | `docs:` | `docs(docs):` |
-| Tests for mobile | `test(mobile):` | `test(test):` |
+| Situation | Subject |
+|-----------|---------|
+| Feature in the web app | `feat(web):` |
+| Docs about the web app | `docs(web):` |
+| Repo-wide docs, or a `docs` package with no better target | `docs:` |
+| Tests for mobile | `test(mobile):` |
 
 | Repo | Typical scopes |
 |------|----------------|
 | JustHold | `web`, `api`, `tokens`, `agents`, `mobile` |
 | 1chooo.com | `bio`, `projects`, `services`, `admin`, `articles` |
 
-## Subject and body
-
-Skip the body when the subject is enough.
-
-Always include a body for breaking changes, security fixes, data migrations, and reverts.
-
-Never put in the message:
-
-- "This commit does X", "I", "we", "now", "currently"
-- AI attribution (`Generated with …`, Co-authored-by an AI)
-- Emoji, unless the repo already uses it
-- Filenames the scope already names
-- Customer names, emails, support-ticket contents, secrets, or PII — describe the technical symptom
-
 ## Footers
 
-- `Closes #42` / `Fixes #42` closes an extra issue. `Refs #17` links without closing.
-- Ticket already in scope (`feat(JH-142):`) → do not also `Closes JH-142`.
-- Breaking: `BREAKING CHANGE: <what callers must do>`.
+`Closes #42` or `Fixes #42` closes an extra issue. `Refs #17` links without closing. A breaking change gets `BREAKING CHANGE: <what callers must do>`.
 
-## Plan the commits
+## Anti-patterns
 
-In plan mode, name the commit chain before any code. The goal is the outcome. The chain is how a later reader replays the work. Commit each step as it finishes. Split an existing diff only when the user asks.
+- **No step in the subject**: `chore: cleanup`. Name the change.
+- **Type as scope**: `docs(docs): update readme`. Scope the thing you documented.
+- **Ticket in the wrong place**: `feat(web): JH-142 add checkout`, or `PROJ-12: soften the press ripple`. Match where this repo already puts the key.
+- **Noun phrase**: `feat(JH-142): checkout flow`. Use an imperative verb.
+- **Several steps, one subject**: `refactor(web): remove headers and fix layout and update docs`. Split the chain.
+
+## Plan the chain
+
+In plan mode, name the chain before any code. The goal is the outcome. The chain is the replay. Commit each step as it finishes. Split a diff that already exists only when the user asks.
 
 ```
 feat: parse stored markup into blocks
@@ -111,25 +98,16 @@ test: cover each markup mark
 fix: handle links the device cannot open
 ```
 
-Several repos: one chain per repo. Commit in the repo that owns the files. Stay local until the user asks to push.
+Several repos means one chain per repo.
 
-## Split into steps
+When the tree mixes concerns and no plan already named the chain, group one reviewable step (one UI surface, one API layer, or one docs pass), stage only that group, and repeat until the tree is clean. Prefer a short chain over one commit that mixes steps.
 
-When the tree mixes concerns and no plan already named the chain:
+## When you commit
 
-1. Group one step (one UI surface, one API layer, one docs pass). Independently reviewable.
-2. Stage only that group. The message names the step.
-3. Repeat until the tree is clean.
-4. Prefer a short chain over one commit that mixes steps.
-
-## When committing
-
-Only after the user explicitly asks. Stay on the current branch, including `main`.
-
-1. `git status` and `git diff --staged` (else `git diff`).
-2. If a plan already named the chain, take the next step. Otherwise pick one step. Stage that group only.
-3. Write the message. The subject must stand alone in `git log --oneline`.
-4. Commit with a HEREDOC. Never put a literal `\n` in `-m`:
+1. Run `git status` and `git diff --staged`. If nothing is staged, use `git diff`.
+2. If a plan already named the chain, take the next step. Otherwise pick one step and stage only that group.
+3. Write the message so the subject stands alone in `git log --oneline`.
+4. Commit with a HEREDOC. A literal `\n` inside `-m` is a broken message:
 
 ```bash
 git commit -m "$(cat <<'EOF'
@@ -142,16 +120,12 @@ EOF
 )"
 ```
 
-5. If a hook fails or auto-modifies files: fix, then a new commit. Do not amend unless the user asked, HEAD is this session's commit, and it is unpushed.
+5. If a hook fails or rewrites files, fix the problem and make a new commit. Amend only when the user asked, HEAD is this session's commit, and it has not been pushed.
 
-## Safety
-
-- Commit only when the user asks.
-- Commit in the repo that owns the files. Stay local until the user asks to push.
-- Do not squash the chain before a pull request unless the user asks.
 - Never stage secrets (`.env`, credentials, private keys).
 - Never skip hooks (`--no-verify`) unless the user asks.
-- Never update git config, force-push to main/master, or run destructive git unless the user asks.
+- Never update git config, force-push `main` or `master`, or run destructive git unless the user asks.
+- Do not squash the chain before a pull request unless the user asks.
 
 ## Examples
 
@@ -165,7 +139,7 @@ feat(web): switch member shell from sidebar to top navbar
 docs(web): document member desktop top-nav shell
 ```
 
-Body when the subject is not enough:
+A body when the subject is not enough:
 
 ```
 refactor(web): drop Tools page desktop intro
@@ -202,15 +176,4 @@ feat(api)!: rename /v1/orders to /v1/checkout
 
 BREAKING CHANGE: clients on /v1/orders must migrate to /v1/checkout.
 Old route returns 410.
-```
-
-Avoid:
-
-```
-chore: cleanup
-docs(docs): update readme
-feat(web): JH-142 add checkout
-feat(JH-142): checkout flow
-refactor(web): remove headers and fix layout and update docs
-PROJ-12: soften the press ripple
 ```
