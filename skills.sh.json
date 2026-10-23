@@ -3,52 +3,74 @@
   "notGrouped": "bottom",
   "groupings": [
     {
-      "title": "Shared",
-      "description": "Cross-project web-service conventions for 1chooo.com and JustHold — App Router, API routes, Supabase clients, and git commits.",
-      "skills": [
-        "web-service-stack",
-        "nextjs-rsc-patterns",
-        "api-supabase-routes",
-        "supabase-clients",
-        "1chooo-commits",
-        "cursor-style-desktop-demo"
-      ]
+      "title": "Dev habits",
+      "description": "How I write code and history.",
+      "skills": ["1chooo-commits"]
     },
     {
-      "title": "1chooo.com",
-      "description": "Conventions for building 1chooo.com — App Router, API routes, Supabase, MDX, and UI.",
-      "skills": [
-        "1chooo-project",
-        "nextjs-app-router",
-        "api-routes",
-        "types-and-constants",
-        "utils-auth-supabase",
-        "mdx-content",
-        "article-components",
-        "components-ui",
-        "services-ui",
-        "services-confirm-toasts",
-        "admin-ui"
-      ]
+      "title": "Agent workflow",
+      "description": "How far a coding agent should look, when to stop, and what to keep.",
+      "skills": ["1chooo-balanced-context"]
     },
     {
-      "title": "JustHold",
-      "description": "Skills for the JustHold investing workspace — project foundation, i18n, design, UI, MDX CMS, and testing.",
-      "skills": [
-        "justhold-project",
-        "justhold-i18n",
-        "justhold-design-tokens",
-        "justhold-ui-layout",
-        "justhold-mdx-content",
-        "justhold-testing"
-      ]
+      "title": "Web stack",
+      "description": "Shared Next.js stack, file placement, and App Router patterns for 1chooo.com and JustHold.",
+      "skills": ["web-service-stack", "nextjs-rsc-patterns"]
     },
     {
-      "title": "Agent",
-      "description": "Coding-agent workflow for exploring, debugging, reviewing, and implementing with modest token use.",
-      "skills": [
-        "1chooo-balanced-context"
-      ]
+      "title": "Web data",
+      "description": "Supabase clients and REST handlers shared by both apps.",
+      "skills": ["api-supabase-routes", "supabase-clients"]
+    },
+    {
+      "title": "Web UI",
+      "description": "Portable interface patterns that are not tied to one product.",
+      "skills": ["cursor-style-desktop-demo"]
+    },
+    {
+      "title": "Site foundation",
+      "description": "Stack, route groups, code placement, and the design system for 1chooo.com.",
+      "skills": ["1chooo-project"]
+    },
+    {
+      "title": "Site routing",
+      "description": "App Router pages and REST route handlers for 1chooo.com.",
+      "skills": ["nextjs-app-router", "api-routes"]
+    },
+    {
+      "title": "Site data",
+      "description": "Types, constants, auth helpers, and Supabase clients for 1chooo.com.",
+      "skills": ["types-and-constants", "utils-auth-supabase"]
+    },
+    {
+      "title": "Site content",
+      "description": "MDX articles and interactive article demos for 1chooo.com.",
+      "skills": ["mdx-content", "article-components"]
+    },
+    {
+      "title": "Site UI",
+      "description": "Shared primitives, services UI, confirms, and admin chrome for 1chooo.com.",
+      "skills": ["components-ui", "services-ui", "services-confirm-toasts", "admin-ui"]
+    },
+    {
+      "title": "JustHold foundation",
+      "description": "Stack, shells, and locale setup for the JustHold workspace.",
+      "skills": ["justhold-project", "justhold-i18n"]
+    },
+    {
+      "title": "JustHold design",
+      "description": "Tokens and the public, member, and admin shells.",
+      "skills": ["justhold-design-tokens", "justhold-ui-layout"]
+    },
+    {
+      "title": "JustHold content",
+      "description": "MDX posts in the JustHold admin CMS.",
+      "skills": ["justhold-mdx-content"]
+    },
+    {
+      "title": "JustHold testing",
+      "description": "Unit, integration, and end-to-end tests.",
+      "skills": ["justhold-testing"]
     }
   ]
 }
